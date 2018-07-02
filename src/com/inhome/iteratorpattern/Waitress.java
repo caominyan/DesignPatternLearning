@@ -4,11 +4,11 @@ import java.util.Iterator;
 
 public class Waitress {
 
-	private DinnerMenu mDinnerMenu;
+	private Iterable<MenuItem> mDinnerMenu;
 	
-	private LaunchMenu mLaunchMenu;
+	private Iterable<MenuItem> mLaunchMenu;
 	
-	public Waitress(DinnerMenu mDinnerMenu, LaunchMenu mLaunchMenu) {
+	public Waitress(Iterable<MenuItem> mDinnerMenu, Iterable<MenuItem> mLaunchMenu) {
 		super();
 		this.mDinnerMenu = mDinnerMenu;
 		this.mLaunchMenu = mLaunchMenu;
