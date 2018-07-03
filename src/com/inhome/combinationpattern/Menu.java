@@ -21,7 +21,7 @@ public class Menu extends MenuComp {
 	@Override
 	void print() {
 		System.out.println("menu_"+name);
-		Iterator<MenuComp> it = createIterator();
+		Iterator<MenuComp> it = lists.iterator();
 		while(it.hasNext()){
 			MenuComp menuComp = it.next();
 			menuComp.print();
@@ -50,14 +50,12 @@ public class Menu extends MenuComp {
 	
 	@Override
 	public MenuComp getChild(int index) throws OperationNotSupportedException {
-		// TODO Auto-generated method stub
 		return lists.get(index);
 	}
 
 	@Override
 	public Iterator<MenuComp> createIterator() {
-		// TODO Auto-generated method stub
-		return lists.iterator();
+		return new MenuIterator(lists.iterator());
 	}
 	
 	

@@ -10,8 +10,8 @@ public abstract class MenuComp implements MenuIterable<MenuComp>{
 	
 	abstract int getPrice();
 	
-	public boolean isRecommand(){
-		return false;
+	public boolean isRecommand() throws OperationNotSupportedException{
+		throw new OperationNotSupportedException();
 	}
 	
 	public MenuComp getChild(int index) throws OperationNotSupportedException{

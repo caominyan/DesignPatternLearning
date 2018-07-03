@@ -1,5 +1,7 @@
 package com.inhome.combinationpattern;
 
+import java.util.Iterator;
+
 import javax.naming.OperationNotSupportedException;
 
 public class TestClient {
@@ -14,9 +16,8 @@ public class TestClient {
 			menuB.add(item);
 		}
 		
-		
 		MenuComp menuL = new Menu("Launch");
-		for(int index = 0 ; index < 20 ;index ++){
+		for(int index = 0 ; index < 10 ;index ++){
 			MenuComp item = new MenuItem("L_"+ index ,index ^ 2, index % 2 == 0);
 			menuL.add(item);
 		}
@@ -29,6 +30,14 @@ public class TestClient {
 			menuD.add(item);
 		}
 		
+		MenuComp menuDessert = new Menu("menuDessert");
+		
+		for(int index = 0 ; index < 15 ;index ++){
+			MenuComp item = new MenuItem("menuDessert_"+ index ,index ^ 2, index % 2 == 0);
+			menuDessert.add(item);
+		}
+		menuD.add(menuDessert);
+		
 		MenuComp allMenu = new Menu("all menu");
 		allMenu.add(menuB);
 		allMenu.add(menuL);
@@ -36,6 +45,9 @@ public class TestClient {
 		
 		Waitress waitress = new Waitress(allMenu);
 		waitress.print();
+		
+		waitress.getRecommandMeal();
+		
 		
 	}
 }
